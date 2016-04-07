@@ -1,7 +1,6 @@
 var config = require("./config.js");
-config.a = 3;
+config.a = 'other';
 
 module.exports = function (){
-	config.b = '0000';
-	document.write(1112);
+	document.write('other');
 };

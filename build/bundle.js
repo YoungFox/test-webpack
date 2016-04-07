@@ -47,7 +47,6 @@
 	__webpack_require__(1);
 	var xx = __webpack_require__(5);
 	xx();
-
 	// 
 
 
@@ -86,7 +85,7 @@
 
 
 	// module
-	exports.push([module.id, "body{\n\tbackground: #eee;\n}\n", ""]);
+	exports.push([module.id, "body{\n\tbackground: #fff;\n}\n", ""]);
 
 	// exports
 
@@ -406,7 +405,7 @@
 /***/ function(module, exports) {
 
 	module.exports = function (){
-		document.write(1234567890);
+		document.write(111234);
 	};
 
 
