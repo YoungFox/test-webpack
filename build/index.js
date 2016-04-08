@@ -1,52 +1,15 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
+webpackJsonp([0,1],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
-	var xx = __webpack_require__(5);
+	__webpack_require__(4);
+
+	var xx = __webpack_require__(1);
 	xx();
+	var other = __webpack_require__(3);
+	other();
+	var config1 = __webpack_require__(2);
+	console.log(config1);
 	// 
 
 
@@ -54,20 +17,55 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var config = __webpack_require__(2);
+	config.a = 3;
+
+	module.exports = function (){
+		config.b = '0000';
+		document.write(1112);
+	};
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	var config = {
+		a:1,
+		b:2
+	}
+	module.exports = config;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var config = __webpack_require__(2);
+	config.a = 'other';
+
+	module.exports = function (){
+		document.write('other');
+	};
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(2);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./node_modules/css-loader/index.js!./style.css");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./style.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -77,21 +75,21 @@
 	}
 
 /***/ },
-/* 2 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "body{\n\tbackground: #fff;\n}\n", ""]);
+	exports.push([module.id, "body{\n\tbackground: #fff;\n\tcolor:red;\n\tbackground: #000;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 3 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/*
@@ -147,7 +145,7 @@
 
 
 /***/ },
-/* 4 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -400,14 +398,5 @@
 	}
 
 
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	module.exports = function (){
-		document.write(111234);
-	};
-
-
 /***/ }
-/******/ ]);
+]);

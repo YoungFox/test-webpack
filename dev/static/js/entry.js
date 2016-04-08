@@ -1,4 +1,4 @@
-require("!style!css!./style.css");
+require("../css/style.css");
 
 var xx = require("./content.js");
 xx();
